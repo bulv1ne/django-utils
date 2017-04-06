@@ -7,3 +7,4 @@ sort = Cover
 
 [run]
 source = utils
+omit = utils/tests/*
