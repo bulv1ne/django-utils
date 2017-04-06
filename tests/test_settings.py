@@ -1,6 +1,6 @@
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 SECRET_KEY = 'secret_key'
 
@@ -88,6 +88,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 STATIC_URL = '/static/'
 
 STATICFILES_STORAGE = 'utils.storage.PipelineManifestStorage'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -97,5 +100,20 @@ STATICFILES_FINDERS = (
 
 DEFAULT_FILE_STORAGE = 'utils.storage.S3MediaStorage'
 MEDIA_BUCKET = 'sprancher-media'
+
+PIPELINE = {
+    'STYLESHEETS': {
+        'main': {
+            'source_filenames': (
+                'example/sass/main.scss',
+            ),
+            'output_filename': 'example/css/main.css',
+        },
+    },
+    'COMPILERS': [
+        'utils.pipeline_compilers.SassCompiler',
+    ],
+    'CSS_COMPRESSOR': 'utils.pipeline_compressors.CssCompressor',
+}
 
 RAVEN_CONFIG = None
