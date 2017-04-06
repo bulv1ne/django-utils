@@ -1,4 +1,5 @@
 boto3
+csscompressor
 django-pipeline
 libsass
 raven
