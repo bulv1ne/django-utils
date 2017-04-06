@@ -2,12 +2,11 @@ language: python
 python: 3.6
 cache: pip
 install:
-  - pip install -U flake8 coverage coveralls
-  - pip install -r requirements-dev.txt
-  - pip install django
+  - pip install -U flake8 coveralls tox
+  - pip install -e .[all]
 script:
   - flake8
-  - coverage run runtests.py
+  - tox
 after_success:
   - coveralls
 deploy:
