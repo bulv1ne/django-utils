@@ -1,6 +1,27 @@
 # !/usr/bin/env python
 
+from itertools import chain
+
 from setuptools import setup
+
+extras_require = {
+    'markdown': [
+        'Markdown>=2.6,<3'
+    ],
+    'pipeline': [
+        'django-pipeline>=1.6,<1.7',
+        'libsass>=0.11,<0.13',
+        'csscompressor>=0.9,<1.0',
+    ],
+    'raven': [
+        'raven>=6.0,<6.1'
+    ],
+    's3': [
+        'boto3>=1.4,<1.5',
+    ],
+}
+
+extras_require['all'] = list(chain(extras_require.values()))
 
 setup(
     name='bulv1ne-django-utils',
@@ -12,6 +33,10 @@ setup(
     author_email='draso.odin@gmail.com',
     url='https://github.com/bulv1ne/django-utils',
     keywords=['django', 'utils'],
+    install_requires=[
+        'django>=1.10,<2',
+    ],
+    extras_require=extras_require,
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
