@@ -5,7 +5,7 @@ from setuptools import setup
 setup(
     name='bulv1ne-django-utils',
     packages=['utils'],
-    version='0.0.3',
+    version='0.0.4',
     description='Django utils for all kinds of situations',
     author='Niels Lemmens',
     license='MIT',
