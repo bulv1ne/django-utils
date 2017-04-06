@@ -17,6 +17,7 @@ template_html = '''
 <p>Baz</p>
 '''
 
+
 class MarkdownTestCase(TestCase):
     def test_markdown(self):
         html = Template(template).render(Context({}))
