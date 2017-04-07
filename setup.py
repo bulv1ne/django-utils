@@ -19,6 +19,9 @@ extras_require = {
     's3': [
         'boto3>=1.4,<1.5',
     ],
+    'frontmatter': [
+        'PyYAML>=3,<4',
+    ],
 }
 
 extras_require['all'] = list(chain(extras_require.values()))
