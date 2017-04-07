@@ -14,7 +14,7 @@ def fix_missing_padding(s):
 class UrlSafeMixin(object):
     def sign(self, value):
         value = super().sign(str(value)).encode('utf-8')
-        return base64.urlsafe_b64encode(value)
+        return base64.urlsafe_b64encode(value).decode('utf-8')
 
     def unsign(self, value, *args, **kwargs):
         value = base64.urlsafe_b64decode(fix_missing_padding(value)).decode('utf-8')
