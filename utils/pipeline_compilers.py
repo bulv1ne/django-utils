@@ -3,7 +3,6 @@ from functools import lru_cache
 import sass
 from django.conf import settings
 from django.contrib.staticfiles.finders import get_finders
-from django.templatetags.static import static as django_static
 from pipeline.compilers import CompilerBase
 
 from .sass_functions.svg_to_data_uri import svg_to_data_uri
