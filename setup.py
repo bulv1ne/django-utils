@@ -2,7 +2,7 @@
 
 from itertools import chain
 
-from setuptools import setup
+from setuptools import find_packages, setup
 
 extras_require = {
     'markdown': [
@@ -28,7 +28,7 @@ extras_require['all'] = list(chain(extras_require.values()))
 
 setup(
     name='bulv1ne-django-utils',
-    packages=['utils'],
+    packages=find_packages(exclude=['tests']),
     version='0.0.6',
     description='Django utils for all kinds of situations',
     author='Niels Lemmens',
