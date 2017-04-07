@@ -9,15 +9,6 @@ from pipeline.compilers import CompilerBase
 from .sass_functions.svg_to_data_uri import svg_to_data_uri
 
 
-def static(path):
-    """
-    Use the Django builtin static file resolver to return an absolute path
-    usable as CSS url() argument. Sass equivalent of the 'static' template
-    tag.
-    """
-    return '"{}"'.format(django_static(path))
-
-
 def svg_to_data_uri_(file_):
     return svg_to_data_uri(file_, get_include_paths())
 
@@ -25,7 +16,6 @@ def svg_to_data_uri_(file_):
 OUTPUT_STYLE = getattr(settings, 'LIBSASS_OUTPUT_STYLE', 'nested')
 SOURCE_COMMENTS = getattr(settings, 'LIBSASS_SOURCE_COMMENTS', settings.DEBUG)
 CUSTOM_FUNCTIONS = getattr(settings, 'LIBSASS_CUSTOM_FUNCTIONS', {
-    'static': static,
     'svg_data_uri': svg_to_data_uri_,
 })
 
