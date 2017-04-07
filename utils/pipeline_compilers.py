@@ -76,9 +76,8 @@ class SassCompiler(CompilerBase):
         return filename.endswith('.scss')
 
     def compile_file(self, infile, outfile, outdated=False, force=False):
-        force = True
-        if not outdated and not force:
-            return
+        # if not outdated and not force:
+        #     return
         with open(outfile, 'w') as f:
             f.write(
                 compile(
