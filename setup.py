@@ -29,7 +29,7 @@ extras_require['all'] = list(chain(extras_require.values()))
 setup(
     name='bulv1ne-django-utils',
     packages=['utils'],
-    version='0.0.5',
+    version='0.0.6',
     description='Django utils for all kinds of situations',
     author='Niels Lemmens',
     license='MIT',
