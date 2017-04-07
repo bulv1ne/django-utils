@@ -10,3 +10,13 @@ bulv1ne-django-utils
 
 .. image:: https://coveralls.io/repos/github/bulv1ne/django-utils/badge.svg?branch=master
   :target: https://coveralls.io/github/bulv1ne/django-utils?branch=master
+
+
+Roadmap
+-------
+
+:Version 0.1:
+  100% test coverage
+
+:Version 0.2:
+  Everything documented
