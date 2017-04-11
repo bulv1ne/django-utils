@@ -16,7 +16,7 @@ Roadmap
 -------
 
 :Version 0.1:
-  100% test coverage
+  70% test coverage (originally hoped for 100%, some things are harder to test)
 
 :Version 0.2:
   Everything documented
