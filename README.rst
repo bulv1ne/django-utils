@@ -12,6 +12,22 @@ bulv1ne-django-utils
   :target: https://coveralls.io/github/bulv1ne/django-utils?branch=master
 
 
+Installing
+----------
+
+.. code-block:: bash
+
+  $ pip install bulv1ne-django-utils
+
+Add 'utils' to INSTALLED_APPS in your settings.py:
+
+INSTALLED_APPS = (
+    ...
+    'utils',
+    ...
+)
+
+
 Roadmap
 -------
 
