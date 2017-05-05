@@ -1,4 +1,5 @@
 import mimetypes
+from io import StringIO
 
 import boto3
 from django.conf import settings
@@ -66,6 +67,8 @@ class S3MediaStorage(Storage, S3HeadCacheMixin):
         return ContentFile(response['Body'].read())
 
     def _save(self, name, content):
+        if isinstance(content.file, StringIO):
+            content = ContentFile(content.read().encode('utf-8'), content.name)
         self.s3client.put_object(
             Bucket=self.bucket,
             Key=name,
