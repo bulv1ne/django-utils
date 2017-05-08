@@ -19,13 +19,15 @@ Installing
 
   $ pip install bulv1ne-django-utils
 
-Add 'utils' to INSTALLED_APPS in your settings.py:
+Add `'utils'` to `INSTALLED_APPS` in your settings.py:
 
-INSTALLED_APPS = (
-    ...
-    'utils',
-    ...
-)
+.. code-block:: python
+
+    INSTALLED_APPS = (
+        ...
+        'utils',
+        ...
+    )
 
 
 Roadmap
