@@ -37,7 +37,7 @@ class JSONPrettyFieldTestCase(TestCase):
         form_data = {'data_field': json.dumps(data)}
         form = TestDictForm(form_data)
         self.assertFalse(form.is_valid())
-        self.assertEqual(form.errors['data_field'], ['{} is not of type dict'.format(data)])
+        self.assertEqual(form.errors['data_field'], ['Value is not of type dict'])
 
     def test_list_only_ok(self):
         data = [{'id': 1}, {'id': 2}]
@@ -50,8 +50,13 @@ class JSONPrettyFieldTestCase(TestCase):
         form_data = {'data_field': json.dumps(data)}
         form = TestListForm(form_data)
         self.assertFalse(form.is_valid())
-        self.assertEqual(form.errors['data_field'], ['{} is not of type list'.format(data)])
+        self.assertEqual(form.errors['data_field'], ['Value is not of type list'])
 
     def test_dict_and_list(self):
         with self.assertRaises(ValueError):
             JSONPrettyField(dict_only=True, list_only=True)
+
+    def test_prepare_value_fail(self):
+        form_data = {'data_field': 'invalid'}
+        form = TestForm(form_data)
+        self.assertIn('invalid', form.as_p())

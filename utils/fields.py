@@ -20,7 +20,32 @@ class JSONPrettyField(JSONField):
 
     def validate(self, value):
         if self.__dict_only and not isinstance(value, dict):
-            raise ValidationError('{} is not of type dict'.format(value))
+            raise ValidationError('Value is not of type dict')
         if self.__list_only and not isinstance(value, list):
-            raise ValidationError('{} is not of type list'.format(value))
+            raise ValidationError('Value is not of type list')
         return value
+
+
+class YAMLPrettyField(JSONPrettyField):
+    def __init__(self, *args, **kwargs):
+        self.__indent = kwargs.pop('indent', 2)
+        self.__default_flow_style = kwargs.pop('default_flow_style', False)
+        super().__init__(*args, **kwargs)
+
+    def to_python(self, value):
+        import yaml
+        try:
+            return yaml.safe_load(value)
+        except yaml.YAMLError as e:
+            raise ValidationError(e)
+
+    def prepare_value(self, value):
+        import yaml
+        try:
+            return yaml.safe_dump(
+                value,
+                indent=self.__indent,
+                default_flow_style=self.__default_flow_style,
+            )
+        except:
+            return value
