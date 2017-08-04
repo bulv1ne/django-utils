@@ -6,3 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 ### Work in progress
+
+## [0.2.0] - 2017-08-04
+### Added
+- YAMLPrettyField, based on JSONPrettyField
+- JSONPrettyField automated tests
+
+[Unreleased]: https://github.com/bulv1ne/django-utils/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/bulv1ne/django-utils/compare/v0.1.3...v0.2.0
