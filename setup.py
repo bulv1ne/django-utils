@@ -22,6 +22,9 @@ extras_require = {
     'frontmatter': [
         'PyYAML>=3,<4',
     ],
+    'json': [
+        'psycopg2>=2.7',
+    ],
 }
 
 extras_require['all'] = list(chain(extras_require.values()))
