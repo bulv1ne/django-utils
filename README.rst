@@ -28,13 +28,3 @@ Add `'utils'` to `INSTALLED_APPS` in your settings.py:
         'utils',
         ...
     )
-
-
-Roadmap
--------
-
-:Version 0.1:
-  70% test coverage (originally hoped for 100%, some things are harder to test)
-
-:Version 0.2:
-  Everything documented
