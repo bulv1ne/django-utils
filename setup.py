@@ -1,6 +1,7 @@
 # !/usr/bin/env python
 
 from itertools import chain
+from os import path
 
 from setuptools import find_packages, setup
 
@@ -29,11 +30,18 @@ extras_require = {
 
 extras_require['all'] = list(chain(extras_require.values()))
 
+here = path.abspath(path.dirname(__file__))
+
+# Get the long description from the README file
+with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
+    long_description = f.read()
+
 setup(
     name='bulv1ne-django-utils',
     packages=find_packages(exclude=['tests']),
     version='0.2.0',
     description='Django utils for all kinds of situations',
+    long_description=long_description,
     author='Niels Lemmens',
     license='MIT',
     author_email='draso.odin@gmail.com',

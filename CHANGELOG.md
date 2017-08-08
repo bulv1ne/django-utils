@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - YAMLPrettyField dumps with unicode characters enabled
+- MANIFEST.in with extra files
+
+### Changed
+- setup.py will read README.rst for it's `long_description`
 
 ## [0.2.0] - 2017-08-04
 ### Added
