@@ -46,6 +46,7 @@ class YAMLPrettyField(JSONPrettyField):
                 value,
                 indent=self.__indent,
                 default_flow_style=self.__default_flow_style,
+                allow_unicode=True,
             )
         except:
             return value
