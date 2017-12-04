@@ -46,7 +46,7 @@ class S3MediaStorage(Storage, S3HeadCacheMixin):
         try:
             self.get_head(name, use_cache=False)
             return True
-        except:
+        except Exception:
             return False
 
     def size(self, name):

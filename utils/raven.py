@@ -8,7 +8,7 @@ def capture_exception(f):
     def wrapper(*args, **kwargs):
         try:
             return f(*args, **kwargs)
-        except:
+        except Exception:
             client.captureException()
             raise
     return wrapper

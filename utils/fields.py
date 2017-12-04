@@ -48,5 +48,5 @@ class YAMLPrettyField(JSONPrettyField):
                 default_flow_style=self.__default_flow_style,
                 allow_unicode=True,
             )
-        except:
+        except Exception:
             return value
