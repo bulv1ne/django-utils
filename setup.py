@@ -48,7 +48,7 @@ setup(
     url='https://github.com/bulv1ne/django-utils',
     keywords=['django', 'utils'],
     install_requires=[
-        'django>=1.10,<2',
+        'django>=1.10',
     ],
     extras_require=extras_require,
     classifiers=[
