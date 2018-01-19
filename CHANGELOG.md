@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- `absolute_url` templatetag
+- Tests for `absolute_reverse` and `absolute_url`
 
 ## [0.2.1]
 ### Added
