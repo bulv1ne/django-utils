@@ -24,7 +24,7 @@ extras_require = {
         'PyYAML>=3,<4',
     ],
     'json': [
-        'psycopg2>=2.7',
+        'psycopg2-binary>=2.7',
     ],
 }
 
