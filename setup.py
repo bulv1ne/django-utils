@@ -39,7 +39,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 setup(
     name='bulv1ne-django-utils',
     packages=find_packages(exclude=['tests']),
-    version='0.2.3',
+    version='0.2.4',
     description='Django utils for all kinds of situations',
     long_description=long_description,
     author='Niels Lemmens',
