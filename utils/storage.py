@@ -74,7 +74,7 @@ class S3MediaStorage(Storage, S3HeadCacheMixin):
             Key=name,
             Body=content,
             ACL='public-read',
-            ContentType=mimetypes.guess_type(name)[0]
+            ContentType=mimetypes.guess_type(name)[0] or 'binary/octet-stream'
         )
         self.reset_head(name)
         return name
