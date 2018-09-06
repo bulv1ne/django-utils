@@ -4,11 +4,11 @@ cache: pip
 install:
   - pip install -U pipenv
   - pipenv install --system -d
-  - pip install -e .[all]
 script:
   - flake8
   - isort --check-only --diff --quiet
   - black --check --fast --exclude node_modules .
+  - pip install -e .[all]
   - tox
 after_success:
   - coveralls
