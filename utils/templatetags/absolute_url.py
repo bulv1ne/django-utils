@@ -1,5 +1,4 @@
 from django import template
-
 from utils.urls import absolute_reverse
 
 register = template.Library()

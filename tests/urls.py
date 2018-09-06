@@ -4,6 +4,4 @@ except ImportError:
     from django.conf.urls import url
 from django.views.generic import View
 
-urlpatterns = [
-    url(r'^test/(?P<number>\d+)/$', View.as_view(), name='test'),
-]
+urlpatterns = [url(r"^test/(?P<number>\d+)/$", View.as_view(), name="test")]

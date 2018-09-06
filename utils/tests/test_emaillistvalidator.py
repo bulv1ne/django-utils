@@ -9,8 +9,8 @@ class EmailListValidatorTestCase(TestCase):
         self.validator = EmailListValidator()
 
     def test_success(self):
-        self.validator('foo@example.com bar@example.com')
+        self.validator("foo@example.com bar@example.com")
 
     def test_fail(self):
         with self.assertRaisesRegex(ValidationError, '"bad" is not a valid email'):
-            self.validator('bad foo@example.com')
+            self.validator("bad foo@example.com")

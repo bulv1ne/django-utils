@@ -1,21 +1,20 @@
 from django.template import Context, Template
 from django.test import TestCase
 
-
-template = '''
+template = """
 {% load md %}
 {% markdown %}
 # Foo
 ## Bar
 Baz
 {% endmarkdown %}
-'''
+"""
 
-template_html = '''
+template_html = """
 <h1>Foo</h1>
 <h2>Bar</h2>
 <p>Baz</p>
-'''
+"""
 
 
 class MarkdownTestCase(TestCase):

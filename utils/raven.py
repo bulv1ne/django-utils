@@ -11,4 +11,5 @@ def capture_exception(f):
         except Exception:
             client.captureException()
             raise
+
     return wrapper

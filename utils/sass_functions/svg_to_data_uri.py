@@ -4,17 +4,11 @@ from urllib.parse import quote
 
 
 def g_b64(data):
-    return b''.join([
-        b'data:image/svg+xml;base64,',
-        b64encode(data.encode('utf-8'))
-    ])
+    return b"".join([b"data:image/svg+xml;base64,", b64encode(data.encode("utf-8"))])
 
 
 def g_uri(data):
-    return ''.join([
-        'data:image/svg+xml;charset=UTF-8,',
-        quote(data)
-    ])
+    return "".join(["data:image/svg+xml;charset=UTF-8,", quote(data)])
 
 
 def svg_to_data(data):

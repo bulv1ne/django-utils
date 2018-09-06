@@ -18,6 +18,5 @@ class EmailListValidator(object):
                 email_validator(email)
             except ValidationError as e:
                 raise ValidationError(
-                    '"{}" is not a valid email'.format(email),
-                    code=e.code,
+                    '"{}" is not a valid email'.format(email), code=e.code
                 )

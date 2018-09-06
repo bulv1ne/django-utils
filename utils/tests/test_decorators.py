@@ -18,18 +18,12 @@ def func_no_args():
 
 @cache_function(3600)
 def func_args(*args):
-    return ', '.join(chain([str(func_no_args_no_cache())], args[::-1]))
+    return ", ".join(chain([str(func_no_args_no_cache())], args[::-1]))
 
 
 @cache_function(3600)
 def func_kwargs(a, b):
-    return ''.join([
-        'a=',
-        a,
-        ' b=',
-        b,
-        str(func_no_args_no_cache()),
-    ])
+    return "".join(["a=", a, " b=", b, str(func_no_args_no_cache())])
 
 
 @cache_function(3600, key=lambda *args: sum(args))
@@ -43,12 +37,12 @@ class CacheFunctionTestCase(TestCase):
         self.assertEqual(func_no_args(), func_no_args())
 
     def test_func_args(self):
-        self.assertEqual(func_args('a', 'b'), func_args('a', 'b'))
-        self.assertNotEqual(func_args('a', 'b'), func_args('b', 'a'))
+        self.assertEqual(func_args("a", "b"), func_args("a", "b"))
+        self.assertNotEqual(func_args("a", "b"), func_args("b", "a"))
 
     def test_func_kwargs(self):
-        self.assertEqual(func_kwargs(a='a', b='b'), func_kwargs(a='a', b='b'))
-        self.assertNotEqual(func_kwargs('a', 'b'), func_kwargs(a='a', b='b'))
+        self.assertEqual(func_kwargs(a="a", b="b"), func_kwargs(a="a", b="b"))
+        self.assertNotEqual(func_kwargs("a", "b"), func_kwargs(a="a", b="b"))
 
     def test_func_key(self):
         self.assertEqual(func_key(1, 2), func_key(1, 2))

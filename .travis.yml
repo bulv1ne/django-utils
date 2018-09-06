@@ -2,10 +2,13 @@ language: python
 python: 3.6
 cache: pip
 install:
-  - pip install -U flake8 coveralls tox
+  - pip install -U pipenv
+  - pipenv install --system -d
   - pip install -e .[all]
 script:
   - flake8
+  - isort --check-only --diff --quiet
+  - black --check --fast --exclude node_modules .
   - tox
 after_success:
   - coveralls

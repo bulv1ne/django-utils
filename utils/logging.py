@@ -1,10 +1,10 @@
 import logging
 
 
-class Logger():
+class Logger:
     def __init__(self, **kwargs):
         self.options = kwargs
-        self.logger = logging.getLogger(kwargs.get('name'))
+        self.logger = logging.getLogger(kwargs.get("name"))
 
     def copy(self, **kwargs):
         options = self.options.copy()
@@ -12,10 +12,12 @@ class Logger():
         return Logger(**options)
 
     def construct_msg(self, msg):
-        return ':'.join([
-            '{}={}'.format(key, value)
-            for key, value in self.options.get('fields', {}).items()
-        ] + [str(msg)]
+        return ":".join(
+            [
+                "{}={}".format(key, value)
+                for key, value in self.options.get("fields", {}).items()
+            ]
+            + [str(msg)]
         )
 
     def name(self, name):

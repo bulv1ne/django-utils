@@ -11,6 +11,9 @@ bulv1ne-django-utils
 .. image:: https://coveralls.io/repos/github/bulv1ne/django-utils/badge.svg?branch=master
   :target: https://coveralls.io/github/bulv1ne/django-utils?branch=master
 
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+  :target: https://github.com/ambv/black
+
 
 Installing
 ----------
@@ -25,6 +28,6 @@ Add `'utils'` to `INSTALLED_APPS` in your settings.py:
 
     INSTALLED_APPS = (
         ...
-        'utils',
+        "utils",
         ...
     )

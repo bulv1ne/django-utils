@@ -13,4 +13,6 @@ class LatencyMiddleware(object):
             return self.get_response(request)
         finally:
             ds = int((time.time() - start_time) * 1000)
-            self.logger.info('url: {} Latency {}ms'.format(request.build_absolute_uri(), ds))
+            self.logger.info(
+                "url: {} Latency {}ms".format(request.build_absolute_uri(), ds)
+            )

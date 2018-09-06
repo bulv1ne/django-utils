@@ -5,15 +5,8 @@ from django.core.cache import cache
 
 
 def create_cache_key(func, args, kwargs):
-    return '-'.join(
-        map(
-            str,
-            chain(
-                [func.__qualname__],
-                args,
-                map(':'.join, kwargs.items()),
-            )
-        )
+    return "-".join(
+        map(str, chain([func.__qualname__], args, map(":".join, kwargs.items())))
     )
 
 
@@ -36,4 +29,5 @@ class cache_function:
             data = func(*args, **kwargs)
             cache.set(key, data, self.timeout)
             return data
+
         return wrapper
