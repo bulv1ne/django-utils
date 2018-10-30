@@ -3,6 +3,7 @@ python: 3.6
 cache: pip
 install:
   - pip install -U pipenv
+  - pip install -U tox-travis
   - pipenv install --system -d
 script:
   - flake8
