@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Fixed
+- MemcachedKeyCharacterError was raised if a file was uploaded with åäö
+  in the filename
 
 ## [0.2.3]
 ### Added
