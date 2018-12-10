@@ -1,4 +1,5 @@
 import mimetypes
+from hashlib import sha256
 from io import StringIO
 
 import boto3
@@ -17,7 +18,7 @@ class PipelineManifestStorage(PipelineMixin, ManifestFilesMixin, StaticFilesStor
 
 class S3HeadCacheMixin:
     def get_cache_key(self, name):
-        return "storages_meta__{}".format(name)
+        return "storages_meta__{}".format(sha256(name.encode()).hexdigest())
 
     def get_head(self, name, use_cache=True):
         if use_cache:

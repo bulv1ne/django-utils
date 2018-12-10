@@ -1,6 +1,8 @@
 language: python
 python: 3.6
 cache: pip
+services:
+  - memcached
 install:
   - pip install -U pipenv
   - pip install -U tox-travis
