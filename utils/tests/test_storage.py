@@ -3,6 +3,7 @@ from unittest.mock import MagicMock
 
 from django.core.cache import cache
 from django.test import TestCase, override_settings
+
 from utils.storage import S3HeadCacheMixin
 
 s3client = MagicMock()

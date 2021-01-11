@@ -1,6 +1,9 @@
 import json
 
-from django.contrib.postgres.forms.jsonb import InvalidJSONInput, JSONField
+try:
+    from django.models import JSONField
+except ImportError:
+    from django.contrib.postgres.forms.jsonb import JSONField
 from django.forms import ValidationError
 
 
@@ -14,7 +17,7 @@ class JSONPrettyField(JSONField):
         super().__init__(*args, **kwargs)
 
     def prepare_value(self, value):
-        if isinstance(value, InvalidJSONInput):
+        if isinstance(value, Exception):
             return value
         return json.dumps(
             value, indent=self.__indent, sort_keys=True, ensure_ascii=False

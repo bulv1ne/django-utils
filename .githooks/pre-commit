@@ -2,7 +2,7 @@
 
 set -eux
 
-pipenv run isort --check-only --diff --quiet
+pipenv run isort --check-only --diff --quiet .
 pipenv run black --check .
 pipenv run flake8
 

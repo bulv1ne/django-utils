@@ -6,15 +6,15 @@ from os import path
 from setuptools import find_packages, setup
 
 extras_require = {
-    "markdown": ["Markdown>=2.6,<3"],
+    "markdown": ["Markdown>=3.0,<3.4"],
     "pipeline": [
-        "django-pipeline>=1.6,<1.7",
-        "libsass>=0.11,<0.13",
+        "django-pipeline>=2.0,<2.1",
+        "libsass>=0.20,<0.21",
         "csscompressor>=0.9,<1.0",
     ],
     "raven": ["raven>=6.0,<6.1"],
-    "s3": ["boto3>=1.4,<1.5"],
-    "frontmatter": ["PyYAML>=3,<4"],
+    "s3": ["boto3"],
+    "frontmatter": ["PyYAML>=5,<6"],
     "json": ["psycopg2-binary>=2.7"],
 }
 
@@ -37,7 +37,7 @@ setup(
     author_email="draso.odin@gmail.com",
     url="https://github.com/bulv1ne/django-utils",
     keywords=["django", "utils"],
-    install_requires=["django>=1.10"],
+    install_requires=["django>=2.2"],
     extras_require=extras_require,
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -47,8 +47,9 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.5",
-        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
         "Topic :: Software Development",
         "Topic :: Utilities",
     ],

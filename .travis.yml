@@ -1,5 +1,8 @@
 language: python
-python: 3.6
+python:
+  - "3.7"
+  - "3.8"
+  - "3.9"
 cache: pip
 services:
   - memcached
@@ -9,7 +12,7 @@ install:
   - pipenv install --system -d
 script:
   - flake8
-  - isort --check-only --diff --quiet
+  - isort --check-only --diff --quiet .
   - black --check --fast --exclude node_modules .
   - pip install -e .[all]
   - tox

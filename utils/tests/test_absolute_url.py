@@ -1,5 +1,6 @@
 from django.template import Context, Template
 from django.test import TestCase
+
 from utils.urls import absolute_reverse
 
 template = '{% load absolute_url %}{% absolute_url "test" 1 %}'

@@ -1,7 +1,6 @@
 import logging
 
 import requests
-
 from django.core.cache import cache
 
 

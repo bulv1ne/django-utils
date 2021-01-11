@@ -1,2 +1,2 @@
 coverage
-python3-memcached
+python-memcached
